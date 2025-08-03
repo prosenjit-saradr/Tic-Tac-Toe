@@ -1,8 +1,8 @@
 export const Board = function(){
-    const board = [
-        ['o','','x'],
-        ['','o','x'],
-        ['','','x'],
+    let board = [
+        ['','',''],
+        ['','',''],
+        ['','',''],
     ]
     
     const GameBoard = {
@@ -12,13 +12,17 @@ export const Board = function(){
             return board[row][col] === '';
         },
         
-        markSqure(row,col,symbol){
+        markSquare(row,col,symbol){
             board[row][col] = symbol;
         },
 
         getSquareMark(row,col){
             return board[row][col];
         },
+
+        reset(){
+            board = [['','',''],['','',''],['','','']];
+        }
     }
     
     return GameBoard;
