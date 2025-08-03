@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "jest"
+=======
+    "test": "jest --verbose"
+>>>>>>> development
   },
   "keywords": [],
   "author": "",
