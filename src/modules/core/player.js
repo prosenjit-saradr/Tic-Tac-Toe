@@ -2,7 +2,7 @@ import { Board } from "./board.js"
 export const Player = function(name,symbol){
     let _name = name;
     let _symbol = symbol;
-    return {
+    const player = {
         makeMove(row,col,board){
             if(board.isSquareEmpty(row,col)){
                 board.markSquare(row,col,symbol);
@@ -25,4 +25,6 @@ export const Player = function(name,symbol){
             return _symbol;
         },
     }
+    
+    return player;
 }

@@ -1,4 +1,4 @@
-import { Game } from "./modules/game.js";
+import { Game } from "./modules/core/game.js";
 
 const game = Game();
 game.setPlayerName('O',"prosenjit");

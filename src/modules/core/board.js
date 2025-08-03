@@ -5,7 +5,7 @@ export const Board = function(){
         ['','',''],
     ]
     
-    const GameBoard = {
+    const gameBoard = {
         board: board,
         
         isSquareEmpty(row,col){
@@ -25,5 +25,5 @@ export const Board = function(){
         }
     }
     
-    return GameBoard;
+    return gameBoard;
 }
