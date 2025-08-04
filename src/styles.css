@@ -1,0 +1,151 @@
+@font-face {
+    font-family: "Rebellion Squad";
+    src: url(./fonts/RebellionSquad-ZpprZ.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Juvanze";
+    src: url(./fonts/Juvanze-ovw9A.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Bloomberg";
+    src: url(./fonts/Blomberg-8MKKZ.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    border : 1px solid yellow;
+}
+
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    all:unset;
+    margin: 10px;
+    padding: 10px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+:root {
+    --clr-ligh-blue: 50,194,242;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #111;
+    color: white;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+}
+
+.settings-menu, .scoreboard-menu {
+    width: 0%;
+    border: 1px solid yellow;    
+    transition: width 0.5s ease-in-out;
+}
+
+.board-container {
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.show {
+    width: 25%;
+}
+
+.board {
+    width: 100%;
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+}
+
+[id *="cell"] {
+    background-color: rgba(var(--clr-ligh-blue),0.1);
+    border: 1px solid rgb(50, 194, 242);
+    border-radius: 5px;
+}
+
+.ttt {
+    width: 100%;
+    font-family: "Bloomberg";
+    text-align: center;
+    font-size: 64px;
+    padding: 10px;
+}
+
+#back {
+    background-image: url(icons/previous.png);
+}
+
+#reset {
+    background-image: url(icons/replay.png);
+}
+
+#next {
+    background-image: url(icons/next.png);
+}
+
+#settings {
+    background-image: url(icons/setting.png);
+}
+
+#restart {
+    background-image: url(icons/replay.png);
+}
+
+#game-hostory {
+    background-image: url(icons/clock.png);
+}
+
+#back, #reset, #next, #settings, #restart, #game-history {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height: 50px;
+    aspect-ratio: 1;
+}
+
+.game-button-container, .utility-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
