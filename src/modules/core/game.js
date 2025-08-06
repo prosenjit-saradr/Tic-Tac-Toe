@@ -53,8 +53,8 @@ export const Game = function(){
             }
             
             
-            /* If player has moved back then create new brach ov move
-               and delete all the move of previous branch */
+            /* If player had moved back previously then create new brach
+               and delete all the moves of previous branch */
 
             let excessMove = _moves.length-(_curMoveIndex+1);
             while(excessMove>0){

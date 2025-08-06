@@ -4,6 +4,13 @@ import { Game } from "../core/game.js";
 export const cellClickHandler = function(row,col){
     const game = Game();
     const board = game.getBoard();
+    
+    /* The next line of code is used to fix a bug, that 
+       if a player has won and then after closing the game 
+       over dialog, if player make another move without
+       resetting the board, then that move should be not
+       registered */
+    if(game.getState().won === true) return;
 
     if(board.isSquareEmpty(row,col)){
         const symbol = game.getCurrentPlayer().getSymbol();
