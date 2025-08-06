@@ -13,6 +13,7 @@ export const Game = function(){
     
     let _curPlayer = _player1;
     const _moves = [];
+    let _curMoveIndex = -1;
     
     const _switchCurPlayer = function(){
         _curPlayer = _curPlayer===_player1 ? _player2 : _player1;
@@ -23,7 +24,9 @@ export const Game = function(){
     };
 
     const _popMove = function(){
-        if(_moves.length>0) _moves.pop();
+        if(_moves.length>0){
+            _moves.pop();
+        }
     };
 
     const game = {
@@ -49,10 +52,39 @@ export const Game = function(){
                 throw Error("Illegal move");
             }
             
-            _curPlayer.makeMove(row,col,_board);
+            
+            /* If player has moved back then create new brach ov move
+               and delete all the move of previous branch */
+
+            let excessMove = _moves.length-(_curMoveIndex+1);
+            while(excessMove>0){
+                _popMove();
+                excessMove--;
+            }
+
             _pushMove({row,col,symbol: _curPlayer.getSymbol()});
+            _curPlayer.makeMove(row,col,_board);
             _switchCurPlayer();
+            _curMoveIndex++;
         },
+        
+        moveForoward(){
+            if(_curMoveIndex+1 < _moves.length){
+                const move = _moves[++_curMoveIndex];
+                _board.markSquare(move.row,move.col,move.symbol);
+                _switchCurPlayer();
+                return move;
+            }
+        },
+
+        moveBackward(){
+            if(_curMoveIndex > -1){
+                const move = _moves[_curMoveIndex--];
+                _board.markSquare(move.row,move.col,'');
+                _switchCurPlayer();
+                return move;
+            }
+        }, 
         
         revertMove(){
             _popMove();
@@ -65,6 +97,10 @@ export const Game = function(){
         getBoard(){
             return _board;
         },
+        
+        resetBoard(){
+            _board.reset();
+        }
     }
     
     _gameIstance = game;

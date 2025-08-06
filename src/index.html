@@ -10,7 +10,7 @@
 <body>
     <header>
         <button id="settings">setting</button>
-        <button id="score">score</button>
+        <button id="scoreboard">score</button>
     </header>
     <main>
         <div class="settings-menu">
@@ -28,15 +28,20 @@
                 <button id="reset"></button>
                 <button id="next"></button>
             </div>
-            <!-- <div class="utility-button-container">
-                <button id="settings"></button>
-                <button id="restart"></button>
-                <button id="game-history"></button>
-            </div> -->
         </div>
         <div class="scoreboard-menu">
             
         </div>
     </main>
+    
+    <dialog id="game-over">
+        <div>
+            <p>Game Over!</p>
+            <div class="go-btn-grp">
+                <button id="play-again">Play</button>
+                <button id="close-dialog">Close</button>
+            </div>
+        </div>
+    </dialog>
 </body>
 </html>
