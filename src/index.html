@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="index.js" type="module" defer></script>
 </head>
 <body>
-    <h1>Tic Tac Toe</h1>
+    <div class="settings-score-btn-group">
+        <button id="settings"></button>
+        <button id="scoreboard"></button>
+    </div>
+    <main>
+        <div class="settings-menu">
+            
+        </div>
+        <div class="board-container">
+            <div class="ttt">Tic Tac Toe</div>
+            <div class="board">
+                <div id="cell00"></div> <div id="cell01"></div> <div id="cell02"></div>
+                <div id="cell10"></div> <div id="cell11"></div> <div id="cell12"></div>
+                <div id="cell20"></div> <div id="cell21"></div> <div id="cell22"></div>
+            </div>
+            <div class="game-button-container">
+                <button id="back"></button>
+                <button id="reset"></button>
+                <button id="next"></button>
+            </div>
+        </div>
+        <div class="scoreboard-menu">
+            
+        </div>
+    </main>
+    
+    <dialog id="game-over">
+        <div>
+            <p>Game Over!</p>
+            <div class="go-btn-grp">
+                <button id="play-again">Play</button>
+                <button id="close-dialog">Close</button>
+            </div>
+        </div>
+    </dialog>
 </body>
 </html>

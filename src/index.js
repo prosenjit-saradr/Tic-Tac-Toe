@@ -1,18 +1,30 @@
-import { Game } from "./modules/core/game.js";
+import { initBoardUI } from "./modules/ui/boardUI.js";
+import { settingsHandler, scoreBoardHandler, resetGameHandler,
+         moveBackwardHandler, moveForowardHandler
+} from "./modules/handlers/handler.js";
 
-const game = Game();
-game.setPlayerName('O',"prosenjit");
-game.setPlayerName('X',"subhankar");
+// /* Init board UI */
+initBoardUI();
 
-console.log(game);
+/* Attach listner to setting and scoreboard button */
+const btnShowScoreboard = document.getElementById("scoreboard");
+const btnShowSettings = document.getElementById("settings");
 
-game.makeMove(1,0);
-game.makeMove(1,1);
-game.makeMove(2,0);
-game.makeMove(1,2);
-game.makeMove(0,0);
+btnShowSettings.addEventListener("click",settingsHandler);
+btnShowScoreboard.addEventListener("click",scoreBoardHandler)
 
-console.log(game.getState());
-console.log(game.getPlayerName('O'));
-console.log(game.getPlayerName('X'));
-console.log(game.getBoard());
+const btnReset = document.getElementById("reset");
+btnReset.addEventListener("click",resetGameHandler);
+
+const btnBack = document.getElementById("back");
+const btnNext = document.getElementById("next");
+
+btnBack.addEventListener("click",()=>{
+    console.log("back");
+    moveBackwardHandler();
+});
+
+btnNext.addEventListener("click",()=>{
+    console.log("next");
+    moveForowardHandler();
+});
