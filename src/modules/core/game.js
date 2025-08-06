@@ -2,7 +2,11 @@ import { Board } from "./board.js";
 import { Player } from "./player.js";
 import { evaluate } from "./evaluator.js";
 
+let _gameIstance = null;
+
 export const Game = function(){
+    if(_gameIstance !== null) return _gameIstance;
+
     const _board = Board();
     const _player1 = Player("playerA",'O');
     const _player2 = Player("playerB",'X');
@@ -23,7 +27,7 @@ export const Game = function(){
     };
 
     const game = {
-        getCuurentPlayer(){
+        getCurrentPlayer(){
             return _curPlayer;
         },
 
@@ -63,5 +67,6 @@ export const Game = function(){
         },
     }
     
+    _gameIstance = game;
     return game;
 }

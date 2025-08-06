@@ -23,6 +23,7 @@
     border : 1px solid yellow;
 }
 
+/* RESET */
 
 *,
 ::before,
@@ -41,6 +42,8 @@ button {
 ul, li {
     list-style: none;
 }
+
+/* VARIABLE */
 
 :root {
     --clr-ligh-blue: 50,194,242;
@@ -148,4 +151,18 @@ main {
     justify-content: space-around;
     align-items: center;
     margin-top: 30px;
+}
+
+.cell-x {
+    background-image: url("./icons/letter-x.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cell-o {
+    background-image: url("./icons/letter-o.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
